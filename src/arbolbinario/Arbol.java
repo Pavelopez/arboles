@@ -29,7 +29,29 @@ public class Arbol<T> {
     }
     
     
+    public void recorrerPreorden(Nodo<T> nodo){
+        if(nodo != null){
+            System.out.println(nodo.getDato());
+            recorrerPreorden(nodo.getIzquierda());
+            recorrerPreorden(nodo.getDerecha());
+        }
+    }
     
+    public void recorrerInorden(Nodo<T> nodo){
+        if(nodo != null){
+            recorrerPreorden(nodo.getIzquierda());
+            System.out.println(nodo.getDato());
+            recorrerPreorden(nodo.getDerecha());
+        }
+    }
+    
+    public void recorrerPosorden(Nodo<T> nodo){
+        if(nodo != null){
+            recorrerPreorden(nodo.getIzquierda());
+            recorrerPreorden(nodo.getDerecha());
+            System.out.println(nodo.getDato());
+        }
+    }
     
     
 }
